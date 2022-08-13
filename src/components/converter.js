@@ -31,30 +31,42 @@ const Converter =()=>{
       }
     }
     
-    const onValueChange =(event)=>{
+    const onValueChange =(event)=>{    
       setValue(event.target.value)
-      if(currentConversion=='1'){
-        setResult(parseFloat(event.target.value)*2.20462)
+      if(event.target.value==''){
+        setResult("")
       }
-      else if(currentConversion=='2'){
-        setResult(parseFloat(event.target.value)*1000)
-      }
-      else if(currentConversion=='3'){
-        setResult(parseFloat(event.target.value)*76.54)
+      else {
+        if(currentConversion=='1'){
+          setResult(parseFloat(event.target.value)*2.20462)
+        }
+        else if(currentConversion=='2'){
+          setResult(parseFloat(event.target.value)*1000)
+        }
+        else if(currentConversion=='3'){
+          setResult(parseFloat(event.target.value)*76.54)
+        }
+
       }
     }
 
     const onResultChange =(event)=>{
       setResult(event.target.value)
-      if(currentConversion=='1'){
-        setValue(parseFloat(event.target.value)/2.20462)
+      if(event.target.value==''){
+        setValue("")
       }
-      else if(currentConversion=='2'){
-        setValue(parseFloat(event.target.value)/1000)
+      else {
+        if(currentConversion=='1'){
+          setValue(parseFloat(event.target.value)/2.20462)
+        }
+        else if(currentConversion=='2'){
+          setValue(parseFloat(event.target.value)/1000)
+        }
+        else if(currentConversion=='3'){
+          setValue(parseFloat(event.target.value)/76.54)
+        }
       }
-      else if(currentConversion=='3'){
-        setValue(parseFloat(event.target.value)/76.54)
-      }
+      
     }
 
 
